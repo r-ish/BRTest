@@ -3,12 +3,12 @@
 [DATABASE_VERSION]
 "11.0" 
 [WORKSPACE_DETAILS]
-"WRC003_SampleProject" "D:\HEW_workspace\BRTest" "D:\HEW_workspace\BRTest\BRTest.hws" "H8S,H8/300" "Hitachi H8S,H8/300 Standard" 
+"WRC003_SampleProject" "D:\src\Github\BRTest" "D:\src\Github\BRTest\BRTest.hws" "H8S,H8/300" "Hitachi H8S,H8/300 Standard" 
 [SHARED_WORKSPACE_CONTROL_STATUS]
 "" "" "" 
 "" "" "" 
 [PROJECTS]
-"IXBUS" "D:\HEW_workspace\BRTest\FILES" "D:\HEW_workspace\BRTest\FILES\WRC003LV.hwp" 0 
+"BRTest" "D:\src\Github\BRTest\FILES" "D:\src\Github\BRTest\FILES\WRC003LV.hwp" 0 
 [INFORMATION]
 "ワークスペース情報がありません" 
 [SCRAP]

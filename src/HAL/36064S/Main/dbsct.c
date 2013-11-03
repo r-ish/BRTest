@@ -11,13 +11,13 @@
                   
 
 
-#include "vs-wrc003lv.h"
+#include "PF_Common.h"
 
 #pragma section $DSEC
 static const struct {
-	UBYTE *rom_s;       /* Start address of the initialized data section in ROM */
-	UBYTE *rom_e;       /* End address of the initialized data section in ROM   */
-	UBYTE *ram_s;       /* Start address of the initialized data section in RAM */
+	UB *rom_s;       /* Start address of the initialized data section in ROM */
+	UB *rom_e;       /* End address of the initialized data section in ROM   */
+	UB *ram_s;       /* Start address of the initialized data section in RAM */
 }DTBL[]= {
 	{__sectop("D"), __secend("D"), __sectop("R")},
 //	{__sectop("$ABS8D"), __secend("$ABS8D"), __sectop("$ABS8R")},
@@ -25,8 +25,8 @@ static const struct {
 };
 #pragma section $BSEC
 static const struct {
-	UBYTE *b_s;         /* Start address of non-initialized data section */
-	UBYTE *b_e;         /* End address of non-initialized data section */
+	UB *b_s;         /* Start address of non-initialized data section */
+	UB *b_e;         /* End address of non-initialized data section */
 }BTBL[]= {
 	{__sectop("B"), __secend("B")},
 //	{__sectop("$ABS8B"), __secend("$ABS8B")},

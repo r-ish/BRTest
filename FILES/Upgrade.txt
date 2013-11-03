@@ -1,6 +1,0 @@
-Project name : LED
-
-Hitachi H8S,H8/300 Standard Toolchain was upgraded 6.1.3.0 -> 6.2.1.0.
-
-[Standard Library]/[Mode]/[Mode :] option is changed.
-

@@ -13,7 +13,6 @@
 
 #include <machine.h>
 #include <36064s.h>
-#include "vs-wrc003lv.h"
 
 #pragma section IntPRG
 //  vector 1 Reserved
@@ -44,23 +43,23 @@ __interrupt(vect=12) void INT_ABRK(void) {/* sleep(); */}
 __interrupt(vect=13) void INT_SLEEP(void) {/* sleep(); */}
 //  vector 14 IRQ0
 __interrupt(vect=14) void INT_IRQ0(void) {
-	intencoder();	
+	//intencoder();	
 }
 //  vector 15 IRQ1
 __interrupt(vect=15) void INT_IRQ1(void){
-	intencoder();	
+	//intencoder();	
 }
 //  vector 16 IRQ2
 __interrupt(vect=16) void INT_IRQ2(void){
-	intencoder();	
+	//intencoder();	
 }
 //  vector 17 IRQ3
 __interrupt(vect=17) void INT_IRQ3(void){
-	intencoder();	
+	//intencoder();	
 }
 //  vector 18 WKP
 __interrupt(vect=18) void INT_WKP(void){
-	intencoder();	
+	//intencoder();	
 }
 //  vector 19 Reserved
 
@@ -73,7 +72,7 @@ __interrupt(vect=22) void INT_TimerV(void) {/* sleep(); */}
 //  vector 23 SCI3
 __interrupt(vect=23) void INT_SCI3(void) {
 	
-	intsci3();	
+//	intsci3();	
 }
 
 //  vector 24 IIC2
