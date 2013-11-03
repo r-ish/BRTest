@@ -1,0 +1,31 @@
+[HIMDBVersion]
+2.0
+[DATABASE_VERSION]
+"1.2" 
+[CURRENT_PROJECT]
+"IXBUS" 
+[GENERAL_DATA]
+[BREAKPOINTS]
+[OPEN_WORKSPACE_FILES]
+"D:\HEW_workspace\BRTest\FILES\dbsct.c" 
+"D:\HEW_workspace\BRTest\FILES\intprg.c" 
+"D:\HEW_workspace\BRTest\FILES\ixbus.c" 
+"D:\HEW_workspace\BRTest\FILES\ixbus.h" 
+"D:\HEW_workspace\BRTest\FILES\main.c" 
+"D:\HEW_workspace\BRTest\FILES\resetprg.c" 
+"D:\HEW_workspace\BRTest\FILES\stacksct.h" 
+"D:\HEW_workspace\BRTest\FILES\vs-wrc003lv.c" 
+"D:\HEW_workspace\BRTest\FILES\vs-wrc003lv.h" 
+[WORKSPACE_FILE_STATES]
+"D:\HEW_workspace\BRTest\FILES\dbsct.c" 0 0 830 299 0 0 
+"D:\HEW_workspace\BRTest\FILES\intprg.c" 22 22 1394 502 0 1 
+"D:\HEW_workspace\BRTest\FILES\ixbus.c" 44 44 1394 502 0 2 
+"D:\HEW_workspace\BRTest\FILES\ixbus.h" 154 154 1394 502 0 7 
+"D:\HEW_workspace\BRTest\FILES\main.c" 66 66 1394 502 0 3 
+"D:\HEW_workspace\BRTest\FILES\resetprg.c" 88 88 1394 502 0 4 
+"D:\HEW_workspace\BRTest\FILES\stacksct.h" 132 132 1394 502 0 6 
+"D:\HEW_workspace\BRTest\FILES\vs-wrc003lv.c" -4 -23 1622 749 1 8 
+"D:\HEW_workspace\BRTest\FILES\vs-wrc003lv.h" 110 110 1394 502 0 5 
+[LOADED_PROJECTS]
+"IXBUS" 
+[END]
