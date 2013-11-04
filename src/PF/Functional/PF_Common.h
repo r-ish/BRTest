@@ -1,16 +1,18 @@
 #ifndef _PF_COMMON_H_
 #define _PF_COMMON_H_
-//************************************************************************
-//
-// [File Name]   : ïWèÄå^íËã`
-//
-// [Description] : 
-//
-// [Revision History] :
-//   REV.00 2013-11-04  BY T.OOSAKI
-//
-//                      (C) 2013 IPL CORPORATION All Rights Reserved
-//************************************************************************
+/*
+************************************************************************
+ÅyFile NameÅzïWèÄå^íËã`
+ÅyDescriptionÅz
+ÅyRevision HistoryÅz
+   REV.00 2013-11-04  BY T.OOSAKI
+   REV.XX 20XX-XX-XX  BY X.XXXXXX
+   REV.XX 20XX-XX-XX  BY X.XXXXXX
+   REV.XX 20XX-XX-XX  BY X.XXXXXX
+
+                      (C) 2013 IPL CORPORATION All Rights Reserved
+************************************************************************
+*/
 
 #include "HAL_Common.h"
 

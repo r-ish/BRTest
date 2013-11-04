@@ -1,3 +1,17 @@
+/*
+************************************************************************
+ÅyFile NameÅzäÑÇËçûÇ›ÉxÉNÉ^íËã`
+ÅyDescriptionÅz
+ÅyRevision HistoryÅz
+   REV.00 2013-11-04  BY T.OOSAKI
+   REV.XX 20XX-XX-XX  BY X.XXXXXX
+   REV.XX 20XX-XX-XX  BY X.XXXXXX
+   REV.XX 20XX-XX-XX  BY X.XXXXXX
+
+                      (C) 2013 IPL CORPORATION All Rights Reserved
+************************************************************************
+*/
+
 /***********************************************************************/
 /*                                                                     */
 /*  FILE        :intprg.c                                              */
