@@ -2,9 +2,9 @@
 #define _HAL_COMMON_H_
 /*
 ************************************************************************
-yFile Namez•W€Œ^’è‹`
-yDescriptionz
-yRevision Historyz
+ã€File Nameã€‘æ¨™æº–åž‹å®šç¾©
+ã€Descriptionã€‘
+ã€Revision Historyã€‘
    REV.00 2013-11-04  BY T.OOSAKI
    REV.XX 20XX-XX-XX  BY X.XXXXXX
    REV.XX 20XX-XX-XX  BY X.XXXXXX
@@ -15,7 +15,7 @@
 */
 
 /*
- * ƒCƒ“ƒNƒ‹[ƒh
+ * ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰
  */
 #include "36064s.h"
 

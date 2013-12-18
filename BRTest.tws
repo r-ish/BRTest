@@ -7,7 +7,19 @@
 [GENERAL_DATA]
 [BREAKPOINTS]
 [OPEN_WORKSPACE_FILES]
+"D:\src\Github\BRTest\src\HAL\36064S\Main\dbsct.c" 
+"D:\src\Github\BRTest\src\HAL\36064S\Main\intprg.c" 
+"D:\src\Github\BRTest\src\HAL\36064S\Main\main.c" 
+"D:\src\Github\BRTest\src\HAL\36064S\Main\resetprg.c" 
+"D:\src\Github\BRTest\src\HAL\HAL_Common.h" 
+"D:\src\Github\BRTest\src\PF\Functional\PF_Common.h" 
 [WORKSPACE_FILE_STATES]
+"D:\src\Github\BRTest\src\HAL\36064S\Main\dbsct.c" 88 88 856 277 0 4 
+"D:\src\Github\BRTest\src\HAL\36064S\Main\intprg.c" 66 66 856 277 0 3 
+"D:\src\Github\BRTest\src\HAL\36064S\Main\main.c" 22 22 856 277 0 1 
+"D:\src\Github\BRTest\src\HAL\36064S\Main\resetprg.c" 44 44 856 277 0 2 
+"D:\src\Github\BRTest\src\HAL\HAL_Common.h" 0 0 852 273 0 0 
+"D:\src\Github\BRTest\src\PF\Functional\PF_Common.h" -4 -23 974 414 1 5 
 [LOADED_PROJECTS]
 "BRTest" 
 [END]
