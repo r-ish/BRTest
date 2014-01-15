@@ -55,7 +55,7 @@ void main( void )
 	IENR1.IENDT = 1;
 
 	/* 運用側面側でタスクスケジューラ関数が定義されている場合コール */
-	if (fpHAL_TIMER_IR_1MS != PF_NULL)
+	if (fpHAL_TASKMAIN_1MS != PF_NULL)
 	{
 		fpHAL_TASKMAIN_1MS();
 	}
