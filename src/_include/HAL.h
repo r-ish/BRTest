@@ -1,8 +1,8 @@
-#ifndef _PF_COMMON_H_
-#define _PF_COMMON_H_
+#ifndef _HAL_H_
+#define _HAL_H_
 /*
 ************************************************************************
-yFile Namez•W€Œ^’è‹`
+yFile NamezHardware Abstraction Layer ‹¤’Êƒwƒbƒ_[
 yDescriptionz
 yRevision Historyz
    REV.00 2013-11-04  BY T.OOSAKI
@@ -14,16 +14,10 @@
 ************************************************************************
 */
 
-// •W€Œ^’è‹`
-typedef	char			B;
-typedef	short			H;
-typedef	long			W;
-typedef unsigned char   UB;
-typedef	unsigned short	UH;
-typedef	unsigned long	UW;
+#include "PF_Common.h"
 
-#define PF_NULL  (void *)0
-#define PF_FALSE (0)
-#define PF_TRUE  (1)
+// Š„‚è‚İ‹Ö~‚Æ‹Ö~ó‘Ô‚©‚çŒ³ó‘Ô‚É•œ‹A
+extern UB   HAL_DisableIr( void );
+extern void HAL_ReturnIr( UB ubCCR );
 
-#endif /* _PF_COMMON_H_ */
+#endif /* _HAL_H_ */

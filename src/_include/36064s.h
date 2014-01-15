@@ -1,14 +1,7 @@
-//HEW4.0_PG2.0_2005.04                                                       
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
+#ifndef _36064S_H_
+#define _36064S_H_
 
+//HEW4.0_PG2.0_2005.04
 
 /************************************************************************/
 /*      H8/36064 Series Include File                       Ver 2.0      */
@@ -817,3 +810,5 @@ union un_mstcr2 {                                       /* union MSTCR2 */
 #define MSTCR1  (*(volatile union  un_mstcr1  *)0xFFF9) /* MSTCR1Address*/
 #define MSTCR2  (*(volatile union  un_mstcr2  *)0xFFFA) /* MSTCR2Address*/
 #define TLB1    TCB1                            /* Change TLB1 --> TCB1 */
+
+#endif /* _HAL_IN_H_ */

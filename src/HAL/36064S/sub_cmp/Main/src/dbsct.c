@@ -9,7 +9,9 @@
 /*                                                                     */
 /***********************************************************************/
 
-#include "PF_Common.h"
+#include	"HALIn.h"
+
+#if ( HAL_HW_SWITCH == HAL_HW_H836064S )
 
 #pragma section $DSEC
 static const struct {
@@ -30,3 +32,5 @@ static const struct {
 //	{__sectop("$ABS8B"), __secend("$ABS8B")},
 //	{__sectop("$ABS16B"), __secend("$ABS16B")}
 };
+
+#endif

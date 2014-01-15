@@ -23,10 +23,12 @@
 /*                                                                     */
 /***********************************************************************/
 
-#include	"PF_Common.h"
+#include	"HALIn.h"
 #include	"stacksct.h"
 #include	<machine.h>
 #include	<_h_c_lib.h>
+
+#if ( HAL_HW_SWITCH == HAL_HW_H836064S )
 
 extern void main(void);
 __entry(vect=0) void PowerON_Reset(void);
@@ -42,3 +44,4 @@ __entry(vect=0) void PowerON_Reset(void)
 	sleep();
 	while(1);
 }
+#endif

@@ -26,7 +26,13 @@
 
 
 #include <machine.h>
-#include <36064s.h>
+#include "HALIn.h"
+#include "36064s.h"
+
+#if ( HAL_HW_SWITCH == HAL_HW_H836064S )
+
+void TIMER_Interrupt( void );
+
 
 #pragma section IntPRG
 //  vector 1 Reserved
@@ -82,7 +88,18 @@ __interrupt(vect=18) void INT_WKP(void){
 //  vector 21 Reserved
 
 //  vector 22 Timer V
-__interrupt(vect=22) void INT_TimerV(void) {/* sleep(); */}
+__interrupt(vect=22) void INT_TimerV(void)
+{
+	TIMER_Interrupt();
+
+	// コンペアマッチフラグAをクリア
+	char wk = TV.TCSRV.BIT.CMFA;
+	if ( wk == 1 )
+	{
+		TV.TCSRV.BIT.CMFA = 0;
+	}
+}
+
 //  vector 23 SCI3
 __interrupt(vect=23) void INT_SCI3(void) {
 	
@@ -116,3 +133,4 @@ __interrupt(vect=29) void INT_TimerB1(void) {/* sleep(); */}
 __interrupt(vect=32) void INT_SCI3_2(void) {/* sleep(); */}
 
 
+#endif
