@@ -7,31 +7,13 @@
 [GENERAL_DATA]
 [BREAKPOINTS]
 [OPEN_WORKSPACE_FILES]
-"D:\src\Github\BRTest\src\_include\36064s.h" 
-"D:\src\Github\BRTest\src\_include\HAL.h" 
-"D:\src\Github\BRTest\src\_include\HAL_Common.h" 
-"D:\src\Github\BRTest\src\_include\HAL_Operation.h" 
-"D:\src\Github\BRTest\src\_include\HALIn.h" 
-"D:\src\Github\BRTest\src\_include\PF_Common.h" 
-"D:\src\Github\BRTest\src\_include\stacksct.h" 
-"D:\src\Github\BRTest\src\HAL\36064S\src\HAL_Ir.c" 
-"D:\src\Github\BRTest\src\HAL\36064S\sub_cmp\Main\src\intprg.c" 
-"D:\src\Github\BRTest\src\HAL\36064S\sub_cmp\Main\src\main.c" 
-"D:\src\Github\BRTest\src\HAL\36064S\sub_cmp\TIMER\src\Timer.c" 
-"D:\src\Github\BRTest\src\HAL\main\src\HAL_Operation.c" 
+"C:\Github\BRTest\src\HAL\36064S\sub_cmp\IO\src\Io.c" 
+"C:\Github\BRTest\src\HAL\36064S\sub_cmp\Main\src\main.c" 
+"C:\Github\BRTest\src\HAL\main\src\HAL_Operation.c" 
 [WORKSPACE_FILE_STATES]
-"D:\src\Github\BRTest\src\HAL\36064S\src\HAL_Ir.c" 88 88 738 211 0 2 
-"D:\src\Github\BRTest\src\HAL\36064S\sub_cmp\Main\src\intprg.c" 22 22 738 211 0 4 
-"D:\src\Github\BRTest\src\HAL\36064S\sub_cmp\Main\src\main.c" 110 110 1320 329 0 11 
-"D:\src\Github\BRTest\src\HAL\36064S\sub_cmp\TIMER\src\Timer.c" -4 -23 1482 510 1 5 
-"D:\src\Github\BRTest\src\HAL\main\src\HAL_Operation.c" 66 66 1316 325 0 1 
-"D:\src\Github\BRTest\src\_include\36064s.h" 44 44 1294 391 0 0 
-"D:\src\Github\BRTest\src\_include\HAL.h" 0 0 738 211 0 3 
-"D:\src\Github\BRTest\src\_include\HALIn.h" 88 88 1008 211 0 7 
-"D:\src\Github\BRTest\src\_include\HAL_Common.h" 0 0 1008 211 0 8 
-"D:\src\Github\BRTest\src\_include\HAL_Operation.h" 66 66 1008 211 0 6 
-"D:\src\Github\BRTest\src\_include\PF_Common.h" 22 22 1008 211 0 9 
-"D:\src\Github\BRTest\src\_include\stacksct.h" 44 44 1008 211 0 10 
+"C:\Github\BRTest\src\HAL\36064S\sub_cmp\IO\src\Io.c" 0 0 950 416 0 0 
+"C:\Github\BRTest\src\HAL\36064S\sub_cmp\Main\src\main.c" 25 25 950 416 0 1 
+"C:\Github\BRTest\src\HAL\main\src\HAL_Operation.c" 50 50 950 416 0 2 
 [LOADED_PROJECTS]
 "BRTest" 
 [END]
