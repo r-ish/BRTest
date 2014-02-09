@@ -25,6 +25,19 @@
  * 外部関数宣言
  */
 
+/*
+ * 内部関数宣言
+ */
+
+/*
+ * グローバル変数宣言
+ */
+
+// 1msタイマー割り込み関数ポインタ
+HAL_TIMER_IR_1MS	fpHAL_TIMER_IR_1MS = PF_NULL;
+// タスクスケジューラ関数ポインタ宣言
+HAL_TASKMAIN_1MS	fpHAL_TASKMAIN_1MS = PF_NULL;
+
 /******************************************************************************
 【名称】1ミリ秒タイマ割り込み関数登録
 【再入】非リエントラント
@@ -33,10 +46,13 @@
 【戻値】なし
 【処理】タイマ割り込み関数を登録する
 ******************************************************************************/
-void HAL_OPE_EntryTmrIR_1MS(HAL_TIMER_IR_1MS fpEntryIR)
+void HAL_OPE_EntryTmrIR_1MS(HAL_TIMER_IR_1MS fpEntryIR )
 {
-	// 引数をグローバル変数に登録する
-	fpHAL_TIMER_IR_1MS = fpEntryIR;
+	// 引数がnullでない場合、グローバル変数に登録する
+	if(fpEntryIR != PF_NULL)
+	{
+		fpHAL_TIMER_IR_1MS = fpEntryIR;
+	}
 }
 
 /******************************************************************************
@@ -47,24 +63,12 @@ void HAL_OPE_EntryTmrIR_1MS(HAL_TIMER_IR_1MS fpEntryIR)
 【戻値】なし
 【処理】タクス処理関数を登録する
 ******************************************************************************/
-void HAL_OPE_EntryTaskMain(HAL_TASKMAIN_1MS fpEntryTASK)
+void HAL_OPE_EntryTaskMain(HAL_TASKMAIN_1MS fpEntryTASK )
 {
-	// 引数をグローバル変数に登録する
-	fpHAL_TASKMAIN_1MS = fpEntryTASK;
+	// 引数がnullでない場合、タスク処理関数をグローバル変数に登録する
+	if(fpEntryTASK != PF_NULL)
+	{
+		fpHAL_TASKMAIN_1MS = fpEntryTASK;
+	}
 }
-
-/*
- * 内部関数宣言
- */
-
-/*
- * グローバル変数宣言
- */
-
-
-
-// 1msタイマー割り込み関数ポインタ
-const	HAL_TIMER_IR_1MS	fpHAL_TIMER_IR_1MS = PF_NULL;
-// タスクスケジューラ関数ポインタ宣言
-const	HAL_TASKMAIN_1MS	fpHAL_TASKMAIN_1MS = PF_NULL;
 

@@ -52,13 +52,15 @@
 void TIMER_Init( void )
 {
 	// TCNTV のクリア条件を指定します
-	TV.TCRV0.BIT.CCLR1 = 0;	// 01：コンペアマッチA でクリアされます
-	TV.TCRV0.BIT.CCLR0 = 1;
+	TV.TCRV0.BIT.CCLR  = 0x1;	// 01：コンペアマッチA でクリアされます
+	// TV.TCRV0.BIT.CCLR1 = 0x0;	// 01：コンペアマッチA でクリアされます
+	// TV.TCRV0.BIT.CCLR0 = 0x1;
 
 	// 内部クロックφ/64 立ち下がりエッジでカウント
-	TV.TCRV0.BIT.CKS2 = 0;
-	TV.TCRV0.BIT.CKS1 = 1;
-	TV.TCRV0.BIT.CKS0 = 1;
+	TV.TCRV0.BIT.CKS = 0x3; // 011：φ/64 立ち下がりエッジでカウント
+	// TV.TCRV0.BIT.CKS2 = 0x0;
+	// TV.TCRV0.BIT.CKS1 = 0x1;
+	// TV.TCRV0.BIT.CKS0 = 0x1;
 
 	// タイムコンスタントレジスタA(250カウントで割り込み)
 	TV.TCORA = 250;

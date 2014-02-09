@@ -17,12 +17,21 @@
 #include "HAL.h"
 #include "HAL_Operation.h"
 
+/*
+ * 関数ポインタ宣言
+ */
+
 // 1msタイマー割り込み関数ポインタ宣言
 typedef	void (*HAL_TIMER_IR_1MS)(void);
-extern	const	HAL_TIMER_IR_1MS	fpHAL_TIMER_IR_1MS;
+extern	HAL_TIMER_IR_1MS	fpHAL_TIMER_IR_1MS;
 
 // タスクスケジューラ関数ポインタ宣言
 typedef	void (*HAL_TASKMAIN_1MS)(void);
-extern	const	HAL_TASKMAIN_1MS	fpHAL_TASKMAIN_1MS;
+extern	HAL_TASKMAIN_1MS	fpHAL_TASKMAIN_1MS;
+
+/*
+ * 関数
+ */
+
 
 #endif /* _HAL_IN_H_ */

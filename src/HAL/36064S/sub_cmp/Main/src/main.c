@@ -15,7 +15,8 @@
 /*
  * インクルード
  */
-#include	"HALIn.h"
+#include "HALIn.h"
+#include "36064s.h"
 
 #if ( HAL_HW_SWITCH == HAL_HW_H836064S )
 
@@ -32,6 +33,7 @@
  */
 extern void main(void);
 extern void TIMER_Init( void );
+extern void IO_Init( void );
 
 /*
  * グローバル変数宣言
@@ -52,7 +54,7 @@ void main( void )
 	TIMER_Init();
 
 	// 全割り込み許可
-	IENR1.IENDT = 1;
+	IENR1.BIT.IENDT = 1;
 
 	/* 運用側面側でタスクスケジューラ関数が定義されている場合コール */
 	if (fpHAL_TASKMAIN_1MS != PF_NULL)
