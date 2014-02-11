@@ -16,6 +16,7 @@
  * インクルード
  */
 #include "HAL.h"
+#include "Application.h"
 #include "PF_Common.h"
 
 /*
@@ -47,6 +48,7 @@ extern void PF_TaskMain(void);
  * グローバル変数宣言
  */
 
+static UB PF_TmrIrFlg;// タイマ割り込み発生フラグ
 static UH PF_TimerCnt;// タイマ割り込みカウント数
 
 /******************************************************************************
@@ -61,6 +63,7 @@ void PF_Init(void)
 {
 	// 変数初期化
 	PF_TimerCnt = 0;
+	PF_TmrIrFlg = 0;
 	// タイマ割り込み関数登録
 	HAL_OPE_EntryTmrIR_1MS(PF_TimerIR);
 	// メインタスク関数登録
@@ -77,13 +80,8 @@ void PF_Init(void)
 ******************************************************************************/
 void PF_TimerIR(void)
 {
-	// タイマカウンタインクリメント
-	PF_TimerCnt++;
-	// タイマカウンタが上限に達している場合はリセットする
-	if(PF_TimerCnt >= PF_TIMER_MAX)
-	{
-		PF_TimerCnt = 0;
-	}
+	// タイマ割り込み発生フラグON
+	PF_TmrIrFlg = 1;
 }
 
 /******************************************************************************
@@ -96,17 +94,36 @@ void PF_TimerIR(void)
 ******************************************************************************/
 void PF_TaskMain(void)
 {
-	
+	int i;
 	// タスクメイン関数は無限ループとする
 	while(1)
 	{
-		switch(PF_TimerCnt)
+		// タイマ割り込み発生フラグがONの場合に実施
+		if(PF_TmrIrFlg == 1)
 		{
-			// ここに、タスクスケジューリングにより呼び出される処理を記述します
-			case 0:
-				break;
-			default:
-				break;
+			// 現在のタイマカウンタに応じた処理を実施
+			switch(PF_TimerCnt)
+			{
+				// ここに、タスクスケジューリングにより呼び出される処理を記述します
+				case 100:
+					// LED操作
+					APP_LED_Set(HAL_LED_OFF, HAL_LED_ON);
+					break;
+				case 600:
+					// LED操作
+					APP_LED_Set(HAL_LED_ON, HAL_LED_OFF);
+				default:
+					break;
+			}
+			// タイマカウンタインクリメント
+			PF_TimerCnt++;
+			// タイマカウンタが上限に達している場合はリセットする
+			if(PF_TimerCnt >= PF_TIMER_MAX)
+			{
+				PF_TimerCnt = 0;
+			}
+			// タイマ割り込み発生フラグをクリア
+			PF_TmrIrFlg = 0;
 		}
 	}
 }

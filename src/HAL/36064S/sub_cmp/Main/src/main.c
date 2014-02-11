@@ -27,13 +27,14 @@
 /*
  * 外部関数宣言
  */
+extern void TIMER_Init( void );
+extern void IO_Init( void );
+extern void PF_Init( void );
 
 /*
  * 内部関数宣言
  */
 extern void main(void);
-extern void TIMER_Init( void );
-extern void IO_Init( void );
 
 /*
  * グローバル変数宣言
@@ -52,6 +53,10 @@ void main( void )
 {
 	// タイマー初期化
 	TIMER_Init();
+	// IOポート初期化
+	IO_Init();
+	// プラットフォーム初期化
+	PF_Init();
 
 	// 全割り込み許可
 	IENR1.BIT.IENDT = 1;

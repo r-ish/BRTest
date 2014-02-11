@@ -89,10 +89,14 @@ __interrupt(vect=18) void INT_WKP(void){
 //  vector 22 Timer V
 __interrupt(vect=22) void INT_TimerV(void)
 {
+	char wk;
+
+	// タイマ割り込み関数呼び出し
 	TIMER_Interrupt();
 
+	// コンペアマッチフラグAの値取得
+	wk = TV.TCSRV.BIT.CMFA;
 	// コンペアマッチフラグAをクリア
-	char wk = TV.TCSRV.BIT.CMFA;
 	if ( wk == 1 )
 	{
 		TV.TCSRV.BIT.CMFA = 0;
