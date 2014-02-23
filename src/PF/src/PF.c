@@ -48,8 +48,7 @@ extern void PF_TaskMain(void);
  * グローバル変数宣言
  */
 
-static UB PF_TmrIrFlg;// タイマ割り込み発生フラグ
-static UH PF_TimerCnt;// タイマ割り込みカウント数
+UH PF_TimerCnt;// タイマ割り込みカウント数
 
 /******************************************************************************
 【名称】プラットフォーム機能初期化関数
@@ -63,7 +62,6 @@ void PF_Init(void)
 {
 	// 変数初期化
 	PF_TimerCnt = 0;
-	PF_TmrIrFlg = 0;
 	// タイマ割り込み関数登録
 	HAL_OPE_EntryTmrIR_1MS(PF_TimerIR);
 	// メインタスク関数登録
@@ -80,8 +78,11 @@ void PF_Init(void)
 ******************************************************************************/
 void PF_TimerIR(void)
 {
-	// タイマ割り込み発生フラグON
-	PF_TmrIrFlg = 1;
+	PF_TimerCnt++;
+	if(PF_TimerCnt == 1000)
+	{
+		PF_TimerCnt = 0;
+	}
 }
 
 /******************************************************************************
@@ -94,36 +95,28 @@ void PF_TimerIR(void)
 ******************************************************************************/
 void PF_TaskMain(void)
 {
-	int i;
+	UB i = 1;
 	// タスクメイン関数は無限ループとする
-	while(1)
+	while(i == 1)
 	{
-		// タイマ割り込み発生フラグがONの場合に実施
-		if(PF_TmrIrFlg == 1)
+		switch(PF_TimerCnt)
 		{
-			// 現在のタイマカウンタに応じた処理を実施
-			switch(PF_TimerCnt)
-			{
-				// ここに、タスクスケジューリングにより呼び出される処理を記述します
-				case 100:
-					// LED操作
-					APP_LED_Set(HAL_LED_OFF, HAL_LED_ON);
-					break;
-				case 600:
-					// LED操作
-					APP_LED_Set(HAL_LED_ON, HAL_LED_OFF);
-				default:
-					break;
-			}
-			// タイマカウンタインクリメント
-			PF_TimerCnt++;
-			// タイマカウンタが上限に達している場合はリセットする
-			if(PF_TimerCnt >= PF_TIMER_MAX)
-			{
-				PF_TimerCnt = 0;
-			}
-			// タイマ割り込み発生フラグをクリア
-			PF_TmrIrFlg = 0;
+			case 0:
+				// LED操作
+				APP_LED1_Set(HAL_LED_OFF);
+				// LED操作
+				APP_LED2_Set(HAL_LED_OFF);
+				break;
+			case 500:
+				// LED操作
+				APP_LED1_Set(HAL_LED_ON);
+				// LED操作
+				APP_LED2_Set(HAL_LED_ON);
+				break;
+			default:
+				break;
 		}
+		// ウォッチドッグタイマを有効にする場合
+		// ここにウォッチドッグタイマのリセット処理を入れる
 	}
 }

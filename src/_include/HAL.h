@@ -48,8 +48,8 @@ extern void HAL_OPE_EntryTaskMain(void (*fpEntryTASK)(void) );
  * LED操作インターフェース
  */
 
-#define HAL_LED_ON  (0x1) // LEDをONにする
-#define HAL_LED_OFF (0x0) // LEDをOFFにする
+#define HAL_LED_ON  (0x0) // LEDをONにする
+#define HAL_LED_OFF (0x1) // LEDをOFFにする
 
 /******************************************************************************
 【名称】LED1操作関数

@@ -1,9 +1,9 @@
 /*
 ************************************************************************
-【File Name】メイン関数
+【File Name】ウォッチドッグタイマ
 【Description】
 【Revision History】
-   REV.00 2013-11-04  BY T.OOSAKI
+   REV.00 2014-02-23  BY R.ISHIKAWA
    REV.XX 20XX-XX-XX  BY X.XXXXXX
    REV.XX 20XX-XX-XX  BY X.XXXXXX
    REV.XX 20XX-XX-XX  BY X.XXXXXX
@@ -17,9 +17,6 @@
  */
 #include "HALIn.h"
 #include "36064s.h"
-
-#if ( HAL_HW_SWITCH == HAL_HW_H836064S )
-
 /*
  * 定数定義
  */
@@ -27,46 +24,41 @@
 /*
  * 外部関数宣言
  */
-extern void TIMER_Init( void );
-extern void IO_Init( void );
-extern void WDT_Init( void );
-extern void PF_Init( void );
 
 /*
  * 内部関数宣言
  */
-extern void main(void);
 
 /*
  * グローバル変数宣言
  */
 
+
+#if ( HAL_HW_SWITCH == HAL_HW_H836064S )
 /******************************************************************************
-【名称】メイン関数
+【名称】ウォッチドッグタイマ初期化
 【再入】非リエントラント
 【入力】なし
 【出力】なし
 【戻値】なし
-【処理】メイン関数
+【処理】WDTレジスタの初期化
+        ＊ウォッチドッグタイマは初期値では動作しないようにする
 ******************************************************************************/
-const UB a = 1; // リンカの警告抑制のため一時的に挿入：L1100 (W) Cannot find "C" specified in option "start"
-void main( void )
+void WDT_Init( void )
 {
-	// タイマー初期化
-	TIMER_Init();
-	// IOポート初期化
-	IO_Init();
-	// プラットフォーム初期化
-	PF_Init();
-		// ウォッチドッグタイマ停止
-	WDT_Init();
-	// 全割り込み許可
-	IENR1.BIT.IENDT = 1;
+	WDT.TCSRWD.BYTE=0x92;	
+	WDT.TCSRWD.BYTE=0x92;
+	
+	WDT.TCSRWD.BIT.B4WI = 0;
+	WDT.TCSRWD.BIT.TCSRWE=1;
 
-	/* 運用側面側でタスクスケジューラ関数が定義されている場合コール */
-	if (fpHAL_TASKMAIN_1MS != PF_NULL)
-	{
-		fpHAL_TASKMAIN_1MS();
-	}
+	WDT.TCSRWD.BIT.B2WI=0;
+	WDT.TCSRWD.BIT.WDON=0;
+	
+	WDT.TMWD.BYTE=0xFF;
+	WDT.TCSRWD.BIT.B6WI = 1;
+	WDT.TCSRWD.BIT.TCWE = 1;
+	WDT.TCWD=0x00;
 }
+
 #endif

@@ -49,11 +49,12 @@ void IO_Init( void )
 {
 	// ポート6のビット4、ビット0を出力に指定します
 	// (LED出力を行います)
-	TZ.TOER.BIT.EA1 = 0x0;
-	TZ.TOER.BIT.EA0 = 0x0;
+	TZ.TOER.BIT.EA1   = 0x0;
+	TZ.TOER.BIT.EA0   = 0x0;
+	TZ0.TIORA.BIT.IOA = 0x0;
 	IO.PCR6 = 0x11;// 0ビット目、4ビット目(PCR60、PCR64を1(出力)に変更する)
-	IO.PDR6.BIT.B0 = 1;
-	IO.PDR6.BIT.B4 = 1;
+	IO.PDR6.BIT.B0 = 0;
+	IO.PDR6.BIT.B4 = 0;
 }
 
 /******************************************************************************

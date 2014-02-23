@@ -89,18 +89,21 @@ __interrupt(vect=18) void INT_WKP(void){
 //  vector 22 Timer V
 __interrupt(vect=22) void INT_TimerV(void)
 {
-	char wk;
-
-	// タイマ割り込み関数呼び出し
+	//char wk;
+	
 	TIMER_Interrupt();
-
-	// コンペアマッチフラグAの値取得
-	wk = TV.TCSRV.BIT.CMFA;
-	// コンペアマッチフラグAをクリア
-	if ( wk == 1 )
+	if(TV.TCSRV.BIT.CMFA == 0x1)
 	{
 		TV.TCSRV.BIT.CMFA = 0;
 	}
+	
+	// コンペアマッチフラグAの値取得
+	//wk = TV.TCSRV.BIT.CMFA;
+	// コンペアマッチフラグAをクリア
+	//if ( wk == 1 )
+	//{
+	//	TV.TCSRV.BIT.CMFA = 0;
+	//}
 }
 
 //  vector 23 SCI3
