@@ -84,11 +84,7 @@
 [WINDOW_POSITION_STATE_DATA_VD4]
 [WINDOW_Z_ORDER]
 "C:\Github\BRTest\src\PF\src\PF.c" 
-"C:\Github\BRTest\src\HAL\36064S\sub_cmp\IO\src\Io.c" 
-"C:\Github\BRTest\src\HAL\36064S\sub_cmp\Main\src\main.c" 
-"C:\Github\BRTest\src\_include\36064s.h" 
-"C:\Github\BRTest\src\HAL\36064S\sub_cmp\Main\src\intprg.c" 
-"C:\Github\BRTest\src\HAL\36064S\sub_cmp\TIMER\src\Timer.c" 
+"C:\Github\BRTest\src\Application\Product\src\Output\APP_Led.c" 
 [TARGET_NAME]
 "" "" 0 
 [STATUSBAR_STATEINFO_VD1]

@@ -7,19 +7,11 @@
 [GENERAL_DATA]
 [BREAKPOINTS]
 [OPEN_WORKSPACE_FILES]
-"C:\Github\BRTest\src\_include\36064s.h" 
-"C:\Github\BRTest\src\HAL\36064S\sub_cmp\IO\src\Io.c" 
-"C:\Github\BRTest\src\HAL\36064S\sub_cmp\Main\src\intprg.c" 
-"C:\Github\BRTest\src\HAL\36064S\sub_cmp\Main\src\main.c" 
-"C:\Github\BRTest\src\HAL\36064S\sub_cmp\TIMER\src\Timer.c" 
+"C:\Github\BRTest\src\Application\Product\src\Output\APP_Led.c" 
 "C:\Github\BRTest\src\PF\src\PF.c" 
 [WORKSPACE_FILE_STATES]
-"C:\Github\BRTest\src\HAL\36064S\sub_cmp\IO\src\Io.c" 0 0 1000 305 0 4 
-"C:\Github\BRTest\src\HAL\36064S\sub_cmp\Main\src\intprg.c" 65 111 1000 305 0 1 
-"C:\Github\BRTest\src\HAL\36064S\sub_cmp\Main\src\main.c" 145 102 1000 305 0 2 
-"C:\Github\BRTest\src\HAL\36064S\sub_cmp\TIMER\src\Timer.c" 10 30 1066 388 0 0 
-"C:\Github\BRTest\src\PF\src\PF.c" 70 136 1000 305 0 3 
-"C:\Github\BRTest\src\_include\36064s.h" 0 0 1000 305 0 5 
+"C:\Github\BRTest\src\Application\Product\src\Output\APP_Led.c" 87 49 1000 305 0 0 
+"C:\Github\BRTest\src\PF\src\PF.c" 25 25 1000 305 0 1 
 [LOADED_PROJECTS]
 "BRTest" 
 [END]

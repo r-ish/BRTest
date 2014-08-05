@@ -29,6 +29,7 @@
  */
 extern void TIMER_Init( void );
 extern void IO_Init( void );
+extern void PWM_Init( void );
 extern void WDT_Init( void );
 extern void PF_Init( void );
 
@@ -56,6 +57,8 @@ void main( void )
 	TIMER_Init();
 	// IOポート初期化
 	IO_Init();
+	// PWM制御初期化
+	PWM_Init();
 	// プラットフォーム初期化
 	PF_Init();
 		// ウォッチドッグタイマ停止
