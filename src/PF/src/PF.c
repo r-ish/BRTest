@@ -24,7 +24,8 @@
  * 定数定義
  */
 
-#define PF_TIMER_MAX (1000)// タイマカウント上限値
+#define PF_IN_TIMER_MAX (100) // タイマカウント上限値(タイマ内部用)
+#define PF_TIMER_MAX (1000)   // タイマカウント上限値
 
 /*
  * 構造体宣言
@@ -53,6 +54,11 @@ extern void PF_TaskMain(void);
 /*
  * グローバル変数宣言
  */
+
+/******************************************************************************
+【名称】タイマ割り込みカウント数(割り込み内部用)
+******************************************************************************/
+UH PF_InTimerCnt;// 
 
 /******************************************************************************
 【名称】タイマ割り込みカウント数
@@ -85,6 +91,7 @@ STR_TaskData strData[] = {
 void PF_Init(void)
 {
 	// 変数初期化
+	PF_InTimerCnt = 0;
 	PF_TimerCnt = 0;
 	Pf_TimerFlg = 0;
 	// タイマ割り込み関数登録
@@ -105,10 +112,11 @@ void PF_TimerIR(void)
 {
 	PF_TimerCnt++;
 	Pf_TimerFlg = 1;
-	if(PF_TimerCnt == 1000)
+	if(PF_TimerCnt >= PF_TIMER_MAX)
 	{
 		PF_TimerCnt = 0;
 	}
+
 }
 
 /******************************************************************************
@@ -125,28 +133,33 @@ void PF_TaskMain(void)
 	// タスクメイン関数は無限ループとする
 	while(i == 1)
 	{
+
+		if(PF_TimerCnt % 100 == 10)
+		{
+			APP_Switch_To_LED();
+		}
 		switch(PF_TimerCnt)
 		{
 			case 0:
 				// モーター前進
-				APP_Motor_Set(HAL_MOTOR_FOWART, HAL_MOTOR_FOWART, 5000, 5000);
+				// APP_Motor_Set(HAL_MOTOR_FOWART, HAL_MOTOR_FOWART, 5000, 5000);
 				// LED操作
-				APP_LED1_Set(HAL_LED_OFF);
+				// APP_LED1_Set(HAL_LED_OFF);
 				// LED操作
-				APP_LED2_Set(HAL_LED_OFF);
+				// APP_LED2_Set(HAL_LED_OFF);
 				break;
 			case 500:
 				// モーター後退
-				APP_Motor_Set(HAL_MOTOR_BACK, HAL_MOTOR_BACK, 5000, 5000);
+				// APP_Motor_Set(HAL_MOTOR_BACK, HAL_MOTOR_BACK, 5000, 5000);
 				// LED操作
-				APP_LED1_Set(HAL_LED_ON);
+				// APP_LED1_Set(HAL_LED_ON);
 				// LED操作
-				APP_LED2_Set(HAL_LED_ON);
+				// APP_LED2_Set(HAL_LED_ON);
 				break;
 			default:
 				break;
-			Pf_TimerFlg = 0;
 		}
+		Pf_TimerFlg = 0;
 		// ウォッチドッグタイマを有効にする場合
 		// ここにウォッチドッグタイマのリセット処理を入れる
 	}

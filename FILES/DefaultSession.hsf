@@ -83,8 +83,10 @@
 "{WK_00000001_MAPSCT}testDefaultSession" "WINDOW" 59422 0 0 "0.33" 190 0 28 350 200 17 0 "32812|<<separator>>|32813|32814|<<separator>>|32816|<<separator>>|32822|32821|<<separator>>|32796|32797|<<separator>>|32833|<<separator>>|32825|32829|<<separator>>|32852" "46.5" 
 [WINDOW_POSITION_STATE_DATA_VD4]
 [WINDOW_Z_ORDER]
+"C:\Github\BRTest\src\Application\Product\src\Exec\APP_SwitchToLED.c" 
 "C:\Github\BRTest\src\PF\src\PF.c" 
-"C:\Github\BRTest\src\Application\Product\src\Output\APP_Led.c" 
+"C:\Github\BRTest\src\HAL\36064S\sub_cmp\TIMER\src\Timer.c" 
+"C:\Github\BRTest\src\_include\36064s.h" 
 [TARGET_NAME]
 "" "" 0 
 [STATUSBAR_STATEINFO_VD1]

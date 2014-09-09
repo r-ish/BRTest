@@ -5,7 +5,7 @@
 【Description】
 【Revision History】
    REV.00 2014-01-25  BY R.ISHIKAWA
-   REV.XX 20XX-XX-XX  BY X.XXXXXX
+   REV.01 2014-09-06  BY R.ISHIKAWA
    REV.XX 20XX-XX-XX  BY X.XXXXXX
    REV.XX 20XX-XX-XX  BY X.XXXXXX
 
@@ -50,13 +50,21 @@ void IO_Init( void )
 {
 	// ポート6のビット4、ビット0を出力に指定します
 	// (LED出力を行います)
+	IO.PDR6.BIT.B0 = 0;
+	IO.PDR6.BIT.B4 = 0;
+	IO.PCR6 = 0x17;// 0～2ビット目、4ビット目(PCR60、61、62、64)を1(出力)に変更する
+
+	
 	TZ.TOER.BIT.EA1   = 0x0;
 	TZ.TOER.BIT.EA0   = 0x0;
 	TZ0.TIORA.BIT.IOA = 0x0;
-	IO.PCR6 = 0x17;// 0～2ビット目、4ビット目(PCR60、61、62、64)を1(出力)に変更する
 	IO.PCR3 = 0xFF;// 全ビットを1(出力)に変更する
-	IO.PDR6.BIT.B0 = 0;
-	IO.PDR6.BIT.B4 = 0;
+	
+	// ポート7のビット4を入力に指定します
+	// (スイッチ入力を行います)
+	IO.PCR7=0xC0;	
+	IO.PDR7.BIT.B6=0;
+	
 }
 
 /******************************************************************************
@@ -113,6 +121,23 @@ void HAL_Motor_DirSet(UB ubMotor1, UB mbMotor2 )
 }
 
 
+/******************************************************************************
+【名称】スイッチ状態取得関数
+【再入】非リエントラント
+【入力】なし
+【出力】なし
+【戻値】スイッチ状態
+【処理】スイッチの状態(データレジスタ7の4ビット目)を取得し戻り値で渡します
+******************************************************************************/
+
+UB HAL_Switch_Get()
+{
+	UB ubTmp;
+	
+	ubTmp = IO.PDR7.BIT.B4;
+	
+	return ubTmp;
+}
 
 
 #endif

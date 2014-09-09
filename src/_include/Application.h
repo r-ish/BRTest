@@ -49,5 +49,16 @@ void APP_LED2_Set(UB ubLed2);
 void APP_Motor_Set(UB ubMotor1Dir,  UB ubMotor2Dir, 
                    UH uhMotor1Duty, UH uhMotor2Duty);
 
+/******************************************************************************
+【名称】スイッチ状態LED反映関数
+【再入】非リエントラント
+【入力】なし
+【出力】なし
+【戻値】なし
+【処理】スイッチの状態を取得し、LEDの状態に反映させる
+******************************************************************************/
+
+void APP_Switch_To_LED();
+
 
 #endif /* _APPLICATION_H_ */
